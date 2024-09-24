@@ -90,7 +90,7 @@ SELECT * FROM my_table LIMIT 10;
 This will return the first 10 rows of your dataset.
 
 
-# Step : Query HDFS using spark
+# Step 7: Query HDFS using spark
 
 ## Connect to spark container
 
