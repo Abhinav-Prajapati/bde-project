@@ -88,3 +88,32 @@ LOCATION '/datasets/mydata';
 SELECT * FROM my_table LIMIT 10;
 ```
 This will return the first 10 rows of your dataset.
+
+
+# Step : Query HDFS using spark
+
+## Connect to spark container
+
+```bash
+docker exec -it spark-master bash
+```
+
+Inside the container, you can launch the Spark shell with:
+
+```bash
+spark-shell --master spark://spark-master:7077
+
+```
+
+## Query sample data to test conectivity 
+
+make sure to enter every spark command in single line
+
+```bash 
+val df = spark.read
+  .option("header", "true")
+  .csv("hdfs://namenode:9000/datasets/mydata/Amazon-Sale-Report.csv")
+
+df.show(10)
+
+```
